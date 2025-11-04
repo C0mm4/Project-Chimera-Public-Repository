@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 450b621c108f8df48ad82248391c27e3, type: 3}
+  m_Name: Bow
+  m_EditorClassIdentifier: 
+  cardGrade: 3
+  soNumber: 560001
+  Name: "\uD65C"
+  Desciption: 
+  Damage: 10
+  ScanRange: 5
+  AttackCooldown: 1
+  Type: 0
+  SoundEffect: {fileID: 8300000, guid: 19540885bb8034013a411175113f9e2f, type: 3}
+  upgradeDataID: 580000
+  ProjectilID: Pref_440000
+  ProjectileCount: 1
+  ProjectileSpeed: 3
+  ProjectileArcHeight: 3

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Sword_Pickup
+  m_EditorClassIdentifier: 
+  id: 550002
+  weaponName: "\uC8FC\uC6B4 \uAC80"
+  cardGrade: 3
+  Description: "\uBC1C\uC790\uAD6D\uACFC \uD751\uC774 \uBB3B\uC5B4\uC788\uB2E4."
+  category: 0
+  mechainc: 2
+  element: 0
+  Damage: 9
+  AttackCooldown: 0.88
+  ScanRange: 3.5
+  aoeRadius: 3.5
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: 
+  ProjectileSpeed: 0
+  ProjectileArcHeight: 0
+  hitboxActiveDuration: 0.1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 580000
+  impact_fx: {fileID: 8300000, guid: 348e5ee98e1c64d898507d61fcf05f88, type: 3}
+  sound_fx: {fileID: 0}

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c72064007936d948925b52ed6b360d8, type: 3}
+  m_Name: SO_301006
+  m_EditorClassIdentifier: 
+  cardGrade: 2
+  currentHealth: 0
+  maxHealth: 1100
+  moveSpeed: 0
+  upgradeDataID: 351000
+  soNumber: 301006
+  SpriteID: Spr_BaseCardSheet[BaseCardSprites_21]
+  CardName: "\uC12C\uC0C8\uD55C \uD65C "
+  CardDesc: "\uC950\uACE0 \uC788\uC73C\uBA74 \uC9D1\uC911\uC774 \uC798\uB41C\uB2E4.\r\n"
+  levelProgressionData:
+  - modelAddressableKey: Pref_200000
+  - modelAddressableKey: Pref_200000
+  - modelAddressableKey: Pref_200000
+  upgradeGoldTableSOID: 399901
+  WeaponID: Pref_501102

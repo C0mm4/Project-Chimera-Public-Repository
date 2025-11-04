@@ -1,0 +1,125 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: UpgradeData
+  m_EditorClassIdentifier: 
+  m_GroupName: UpgradeData
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 123dab30dff06a84db7c7be2a9c72059
+  m_SerializeEntries:
+  - m_GUID: 0bf3716b0b27a8848949504cf00ed5a9
+    m_Address: SO_360000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2d1fdeafe8167114d8bc049cfd958777
+    m_Address: SO_351000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3905bcdf17b9bda43b2ad51aa82e1d51
+    m_Address: SO_380000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 42dcc2920ca16eb49ba569f692f83fc0
+    m_Address: SO_392000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4d2a67add31cbf34789fae734c75a080
+    m_Address: SO_350000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 58ce5772406bfdb439420a9ab9d56781
+    m_Address: SO_361000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 658d86c2fd4f0cb43af57590e01cc785
+    m_Address: SO_362000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 74ed49d3020f68147ac5090b037f4eaa
+    m_Address: SO_363000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76fc07e79e1d6134bbfa02168970f379
+    m_Address: SO_383000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 78b3a358fcdb5c4479b881307ffc5503
+    m_Address: SO_352000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80fc583342abd8149b301ee582a13756
+    m_Address: SO_353000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 87bb681130b5d7d478d9c7cbf07d98aa
+    m_Address: SO_370000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 89dbc9f2832bb2047899848e8afddc3c
+    m_Address: SO_373000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a269b896574c0da47bacee4b386c8097
+    m_Address: SO_391000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ac00256cbaf3d994a8ff1796e00c7fd4
+    m_Address: SO_390000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c56f704760a8e6349aec722f33702dc9
+    m_Address: SO_381000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e18e7430038e73348a01df90f2830ad1
+    m_Address: SO_371000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb7df15fae128be40833609260467fa7
+    m_Address: SO_393000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f39887af05b023142bdcc8896d4ceb36
+    m_Address: SO_372000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ff15666ebff42994b882003fd590de22
+    m_Address: SO_382000
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 4efd53647d131ee4c80040b144c5c629, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: df9af91eaff21eb4894ed460f3fe00e9, type: 2}
+    - {fileID: 11400000, guid: 2d1c92d4f19495f48adc33d278dc3b83, type: 2}

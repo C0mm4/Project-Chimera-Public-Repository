@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Bow_Sun
+  m_EditorClassIdentifier: 
+  id: 553100
+  weaponName: "\uD0DC\uC591\uAD81"
+  cardGrade: 0
+  Description: "\uD0DC\uC591\uC758 \uD798\uC744 \uBC1B\uC544\uB4E4\uC778 \uD65C"
+  category: 1
+  mechainc: 0
+  element: 0
+  Damage: 95
+  AttackCooldown: 1.2
+  ScanRange: 13
+  aoeRadius: 1
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: Pref_440000
+  ProjectileSpeed: 1
+  ProjectileArcHeight: 3
+  hitboxActiveDuration: 0.3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 583000
+  impact_fx: {fileID: 8300000, guid: 1eaed7f948a6e46a0bdd17fb5f596bd8, type: 3}
+  sound_fx: {fileID: 0}

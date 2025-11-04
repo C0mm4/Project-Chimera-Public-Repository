@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Staff_AzureSky
+  m_EditorClassIdentifier: 
+  id: 553201
+  weaponName: "\uCC3D\uACF5\uC758 \uB9C8\uB3C4\uBD09"
+  cardGrade: 0
+  Description: "\uD558\uB298\uC758 \uB9C8\uB825\uC744 \uD488\uC740 \uAD81\uADF9\uC758
+    \uBD09."
+  category: 2
+  mechainc: 1
+  element: 0
+  Damage: 135
+  AttackCooldown: 1.8
+  ScanRange: 10.4
+  aoeRadius: 4.2
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: Pref_440001
+  ProjectileSpeed: 20
+  ProjectileArcHeight: 0
+  hitboxActiveDuration: 0.3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 580000
+  impact_fx: 
+  sound_fx: 

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Bow_Training
+  m_EditorClassIdentifier: 
+  id: 550103
+  weaponName: "\uC218\uB828 \uD65C"
+  cardGrade: 3
+  Description: "\uC218\uB828\uD558\uAE30 \uC88B\uB2E4."
+  category: 1
+  mechainc: 0
+  element: 0
+  Damage: 11
+  AttackCooldown: 1
+  ScanRange: 12
+  aoeRadius: 1
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: Pref_440000
+  ProjectileSpeed: 15
+  ProjectileArcHeight: 3
+  hitboxActiveDuration: 0.3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 580000
+  impact_fx: {fileID: 8300000, guid: d45d45c33b80e4749a871c1401a0c57d, type: 3}
+  sound_fx: {fileID: 0}

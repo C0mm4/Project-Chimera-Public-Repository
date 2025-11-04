@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Bow_Greenwood
+  m_EditorClassIdentifier: 
+  id: 551103
+  weaponName: "\uC720\uC5F0\uD55C \uB179\uBAA9 \uD65C"
+  cardGrade: 2
+  Description: "\uC790\uC5F0 \uCE5C\uD654\uC801\uC774\uB2E4. \uAD00\uB9AC\uAC00 \uC798
+    \uB418\uC5B4\uC788\uB2E4."
+  category: 1
+  mechainc: 0
+  element: 0
+  Damage: 17
+  AttackCooldown: 1.4
+  ScanRange: 14
+  aoeRadius: 1
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: Pref_440000
+  ProjectileSpeed: 15
+  ProjectileArcHeight: 3
+  hitboxActiveDuration: 0.3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 581000
+  impact_fx: {fileID: 8300000, guid: 9549693bc583a4b16925ce686330c67a, type: 3}
+  sound_fx: {fileID: 0}

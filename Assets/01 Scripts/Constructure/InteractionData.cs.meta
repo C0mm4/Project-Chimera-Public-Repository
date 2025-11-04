@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/01 Scripts/UI/CardDrawSpecialUI.cs.meta
+guid: 42cfac7d91210f047bb0cd053447468e
+========
+guid: d2c9eb6f659b44742a32792806d4969f
+>>>>>>>> Develop:Assets/01 Scripts/Constructure/InteractionData.cs.meta
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8dd6571861f204284259a61d201e7a, type: 3}
+  m_Name: WarriorEnemy01
+  m_EditorClassIdentifier: 
+  cardGrade: 3
+  currentHealth: 28
+  maxHealth: 28
+  moveSpeed: 5
+  upgradeDataID: 0
+  enemyName: "\uAE38\uAC70\uB9AC \uAC80\uC0AC"
+  tier: 1
+  damage: 5
+  WeaponID: Pref_510000
+  aiSearchType: 0
+  targetDetectrange: 10
+  playerFollowTime: 10
+  attackDistance: 1
+  attackRate: 1
+  description: "\uAC00\uC7A5 \uAE30\uBCF8\uC801\uC778 \uADFC\uAC70\uB9AC \uC804\uC0AC.
+    \uB290\uB9AC\uC9C0\uB9CC \uB2E8\uB2E8\uD568."

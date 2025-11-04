@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Axe_Battle
+  m_EditorClassIdentifier: 
+  id: 551300
+  weaponName: "\uC804\uD22C\uC6A9 \uB3C4\uB07C"
+  cardGrade: 2
+  Description: "\uC804\uC7A5\uC744 \uC704\uD574 \uAC15\uD654\uB41C \uAC15\uCCA0 \uB3C4\uB07C."
+  category: 0
+  mechainc: 2
+  element: 0
+  Damage: 13
+  AttackCooldown: 0.7
+  ScanRange: 3.25
+  aoeRadius: 3.25
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: 
+  ProjectileSpeed: 0
+  ProjectileArcHeight: 0
+  hitboxActiveDuration: 0.3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 581000
+  impact_fx: 
+  sound_fx: 

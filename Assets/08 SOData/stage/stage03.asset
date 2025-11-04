@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19c0f94d5300bd4f9851294e58e3e8e, type: 3}
+  m_Name: stage03
+  m_EditorClassIdentifier: 
+  monsters:
+  - keyName: Pref_400001
+    prefabName: Pref_400001
+    spawnEnemyCount: 3
+    spawnPointIndex: 0
+    SpawnRepeatCount: 2
+    delayBetweenSpawnRepeat: 2
+    delayBetweenWave: 0
+    delayType: 0
+    checkPrevWaveIndexes: 
+  - keyName: Pref_400002
+    prefabName: Pref_400002
+    spawnEnemyCount: 3
+    spawnPointIndex: 0
+    SpawnRepeatCount: 2
+    delayBetweenSpawnRepeat: 2
+    delayBetweenWave: 0
+    delayType: 0
+    checkPrevWaveIndexes: 
+  - keyName: Pref_400003
+    prefabName: Pref_400003
+    spawnEnemyCount: 3
+    spawnPointIndex: 0
+    SpawnRepeatCount: 2
+    delayBetweenSpawnRepeat: 2
+    delayBetweenWave: 0
+    delayType: 0
+    checkPrevWaveIndexes: 
+  - keyName: Pref_400004
+    prefabName: Pref_400004
+    spawnEnemyCount: 3
+    spawnPointIndex: 0
+    SpawnRepeatCount: 2
+    delayBetweenSpawnRepeat: 2
+    delayBetweenWave: 0
+    delayType: 0
+    checkPrevWaveIndexes: 
+  - keyName: Pref_410001
+    prefabName: Pref_410001
+    spawnEnemyCount: 15
+    spawnPointIndex: 2
+    SpawnRepeatCount: 3
+    delayBetweenSpawnRepeat: 1
+    delayBetweenWave: 2
+    delayType: 3
+    checkPrevWaveIndexes: 03000000

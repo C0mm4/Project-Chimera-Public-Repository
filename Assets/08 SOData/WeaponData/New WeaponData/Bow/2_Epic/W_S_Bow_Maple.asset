@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Bow_Maple
+  m_EditorClassIdentifier: 
+  id: 552100
+  weaponName: "\uAC15\uD55C \uB2E8\uD48D \uD65C"
+  cardGrade: 1
+  Description: "\uBA85\uC778\uC774 \uAE4D\uC740 \uACAC\uACE0\uD55C \uD65C\uC774\uB2E4."
+  category: 1
+  mechainc: 0
+  element: 0
+  Damage: 33
+  AttackCooldown: 1.2
+  ScanRange: 11.6
+  aoeRadius: 1
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: Pref_440000
+  ProjectileSpeed: 15
+  ProjectileArcHeight: 3
+  hitboxActiveDuration: 0.3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 582000
+  impact_fx: {fileID: 8300000, guid: bf665b7e9a94249a0b0bd6806ffa5c1d, type: 3}
+  sound_fx: {fileID: 0}

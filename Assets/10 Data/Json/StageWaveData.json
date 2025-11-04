@@ -1,0 +1,602 @@
+﻿[
+  {
+    "ID": 600101,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 3,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600102,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600103,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 2,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600104,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600201,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 2,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600202,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 3,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600203,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 5,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600204,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 3,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600301,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 5,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600302,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 2,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600303,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 5,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600304,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 5,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600401,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600402,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 2,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600403,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600404,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 5,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600501,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600502,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600503,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600504,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 5,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600505,
+    "keyName": "Pref_400002",
+    "prefabName": "Pref_400002",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600506,
+    "keyName": "Pref_410002",
+    "prefabName": "Pref_410002",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600601,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600602,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 5,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600603,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 7,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600604,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600701,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 7,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600702,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600703,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 4,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600704,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600801,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 7,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600802,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 7,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600803,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 4,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600804,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 7,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600901,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 4,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600902,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 7,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 600903,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 4,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 600904,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 4,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 601001,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 3,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 601002,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 4,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 2,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 0,
+    "delayType": 0,
+    "checkPrevWaveIndexes": []
+  },
+  {
+    "ID": 601003,
+    "keyName": "Pref_400001",
+    "prefabName": "Pref_400001",
+    "spawnEnemyCount": 3,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 3,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 601004,
+    "keyName": "Pref_410001",
+    "prefabName": "Pref_410001",
+    "spawnEnemyCount": 7,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 601005,
+    "keyName": "Pref_400003",
+    "prefabName": "Pref_400003",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  },
+  {
+    "ID": 601006,
+    "keyName": "Pref_410003",
+    "prefabName": "Pref_410003",
+    "spawnEnemyCount": 1,
+    "spawnPointIndex": 0,
+    "SpawnRepeatCount": 1,
+    "delayBetweenSpawnRepeat": 1,
+    "delayBetweenWave": 2,
+    "delayType": 2,
+    "checkPrevWaveIndexes": [
+      0,
+      1
+    ]
+  }
+]

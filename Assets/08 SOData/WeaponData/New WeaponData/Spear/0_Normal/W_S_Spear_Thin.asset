@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Spear_Thin
+  m_EditorClassIdentifier: 
+  id: 550400
+  weaponName: "\uC587\uC740 \uCC3D"
+  cardGrade: 3
+  Description: "\uAC00\uBCCD\uACE0 \uB0A0\uB835\uD55C \uC587\uC740 \uCC3D. \uBE60\uB974\uC9C0\uB9CC
+    \uC704\uB825\uC740 \uC57D\uD558\uB2E4."
+  category: 0
+  mechainc: 2
+  element: 0
+  Damage: 8
+  AttackCooldown: 1
+  ScanRange: 5
+  aoeRadius: 5
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: 
+  ProjectileSpeed: 0
+  ProjectileArcHeight: 0
+  hitboxActiveDuration: 0.3
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  upgradeDataID: 0
+  impact_fx: 
+  sound_fx: 

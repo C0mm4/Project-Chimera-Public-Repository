@@ -1,0 +1,138 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0967386374f754cb894d8d04b43fcd, type: 3}
+  m_Name: E.card
+  m_EditorClassIdentifier: 
+  Data:
+  - TutorialType: 0
+    Dialogue: "\uCF54\uC778\uC744 \uD68D\uB4DD\uD558\uC168\uB124\uC694. \uC774\uBC88\uC5D4
+      \uCF54\uC778\uC758 \uC0AC\uC6A9 \uBC29\uBC95\uC744 \uC54C\uB824\uB4DC\uB9B4\uAC8C\uC694."
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uD68D\uB4DD\uD55C \uCF54\uC778\uC740 \uC5EC\uB7EC \uACF3\uC5D0 \uC0AC\uC6A9\uD560
+      \uC218 \uC788\uC5B4\uC694."
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uADF8 \uC911 \uCE74\uB4DC \uBF51\uAE30\uB3C4 \uC788\uB2F5\uB2C8\uB2E4!"
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uD55C \uBC88 \uBCFC\uAE4C\uC694?"
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 1
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 18.7, y: -12, z: 8.1}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: Interaction_Btn
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: CardFusionPanelManagement
+    TargetUIElementName: CardFusionPanelManagement
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: CardFusionUI(Clone)
+    TargetUIElementName: gachaButton
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uC5EC\uAE30\uC11C \uCE74\uB4DC\uB97C \uBF51\uC744 \uC218 \uC788\uC5B4\uC694."
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uC77C\uB2E8 1\uC7A5\uB9CC \uBF51\uC544\uBCFC\uAE4C\uC694?"
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: Coin_Btn
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: DrawButton
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: Exit_Btn
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uC798\uD588\uC5B4\uC694!"
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uCE74\uB4DC\uC5D0 \uB530\uB77C \uC0AC\uC6A9 \uBC29\uBC95\uC774 \uB2E4\uB974\uAE30
+      \uB54C\uBB38\uC5D0 \uC798 \uD655\uC778\uD574\uC57C \uD574\uC694."
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uADF8 \uC911 \uAC74\uBB3C \uCE74\uB4DC\uB294 \uC6D0\uD558\uB294 \uAC74\uBB3C\uC5D0
+      \uAC00\uAE4C\uC774 \uAC00\uC11C \uC0C1\uD638\uC791\uC6A9\uC744 \uD558\uBA74
+      \uCE74\uB4DC\uB97C \uBD80\uC5EC\uD560 \uC218 \uC788\uC5B4\uC694."
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: CloseDraw
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: CloseMenu
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: CardManagementPanelFusion
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uC5EC\uAE30\uC11C \uCE74\uB4DC\uB97C \uBCC0\uACBD \uB610\uB294 \uC5C5\uADF8\uB808\uC774\uB4DC\uD560
+      \uC218 \uC788\uC5B4\uC694."
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uAC8C\uC784\uC744 \uD50C\uB808\uC774\uD558\uBA74\uC11C \uBF51\uAE30\uB97C
+      \uD1B5\uD574 \uB2E4\uC591\uD55C \uCE74\uB4DC\uB975 \uD68D\uB4DD\uD560 \uC218
+      \uC788\uC2B5\uB2C8\uB2E4!"
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 2
+    Dialogue: 
+    ShouldOpenUIName: 
+    TargetUIElementName: CloseManagement
+    DestinationPosition: {x: 0, y: 0, z: 0}
+  - TutorialType: 0
+    Dialogue: "\uC801\uB4E4\uB85C\uBD80\uD130 \uC6B0\uB9AC \uB9C8\uC744\uC744 \uC9C0\uCF1C\uC8FC\uC138\uC694!"
+    ShouldOpenUIName: 
+    TargetUIElementName: 
+    DestinationPosition: {x: 0, y: 0, z: 0}

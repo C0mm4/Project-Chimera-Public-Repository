@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96f86c9ef4f7dd346ad3d8971faec73f, type: 3}
+  m_Name: SO_331002
+  m_EditorClassIdentifier: 
+  cardGrade: 2
+  currentHealth: 0
+  maxHealth: 50
+  moveSpeed: 0
+  upgradeDataID: 381000
+  soNumber: 331002
+  SpriteID: Spr_Barrack[BarrackSpr_7]
+  CardName: "\uC131\uBB38 \uACBD\uBE44\uC18C "
+  CardDesc: "\uC131\uBB38\uC744 \uC9C0\uD0A4\uB294 \uBB38\uC9C0\uAE30\uB97C \uC18C\uD658\uD569\uB2C8\uB2E4.\r\n"
+  levelProgressionData:
+  - modelAddressableKey: Pref_230000
+  - modelAddressableKey: Pref_230000
+  - modelAddressableKey: Pref_230000
+  - modelAddressableKey: Pref_230000
+  - modelAddressableKey: Pref_230000
+  upgradeGoldTableSOID: 399903
+  spawnUnitKey: Pref_470000
+  unitUseWeaponKey: Pref_501002
+  spawnCount: 3
+  spawnRate: 10

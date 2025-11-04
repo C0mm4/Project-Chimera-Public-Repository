@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48584c447f4bbf145b8968fdaa50e3b1, type: 3}
+  m_Name: SO_320005
+  m_EditorClassIdentifier: 
+  cardGrade: 3
+  currentHealth: 0
+  maxHealth: 100
+  moveSpeed: 0
+  upgradeDataID: 370000
+  soNumber: 320005
+  SpriteID: Spr_Tower[TowerSpr_14]
+  CardName: "\uACE0\uD48D\uC758 \uC0AC\uC218\uD0D1 "
+  CardDesc: "\uB290\uB9AC\uC9C0\uB9CC \uAFB8\uC900\uD788 \uBA85\uC911\uD55C\uB2E4.\r\n"
+  levelProgressionData:
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  - modelAddressableKey: Pref_220000
+  upgradeGoldTableSOID: 399902
+  weaponID: Pref_500100

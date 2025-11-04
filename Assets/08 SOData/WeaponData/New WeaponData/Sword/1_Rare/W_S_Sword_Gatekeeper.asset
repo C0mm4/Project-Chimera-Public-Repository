@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Sword_Gatekeeper
+  m_EditorClassIdentifier: 
+  id: 551002
+  weaponName: "\uBB38\uC9C0\uAE30\uC758 \uAC80"
+  cardGrade: 2
+  Description: "\uB9C8\uC744\uC744 \uC9C0\uD0A4\uAE30 \uC704\uD574 \uAE30\uAEBC\uC774"
+  category: 0
+  mechainc: 2
+  element: 0
+  Damage: 12
+  AttackCooldown: 0.9
+  ScanRange: 4
+  aoeRadius: 4
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: 
+  ProjectileSpeed: 0
+  ProjectileArcHeight: 0
+  hitboxActiveDuration: 0.1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  upgradeDataID: 581000
+  impact_fx: {fileID: 8300000, guid: e2443898fd802439694194d2607fa9e4, type: 3}
+  sound_fx: {fileID: 0}

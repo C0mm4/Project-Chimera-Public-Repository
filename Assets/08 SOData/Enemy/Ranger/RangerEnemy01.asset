@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8dd6571861f204284259a61d201e7a, type: 3}
+  m_Name: RangerEnemy01
+  m_EditorClassIdentifier: 
+  cardGrade: 3
+  currentHealth: 22
+  maxHealth: 22
+  moveSpeed: 4
+  upgradeDataID: 0
+  enemyName: "\uC720\uB791 \uAD81\uC218"
+  tier: 1
+  damage: 3
+  WeaponID: Pref_500101
+  aiSearchType: 0
+  targetDetectrange: 10
+  playerFollowTime: 10
+  attackDistance: 10
+  attackRate: 1.2
+  description: "\uB3C4\uC801\uB2E8 \uC870\uBB34\uB798\uAE30 \uAD81\uC218\uC774\uB2E4."

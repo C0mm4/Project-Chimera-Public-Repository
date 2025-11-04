@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: GroundAnimatorControllerMage
+  m_Controller: {fileID: 9100000, guid: c679d5717bfa0784a96d79490233c1dc, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ec7c6a996b4d15b46b85166455c9fd5e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 377049af007987e4481c7205403e7910, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 1f3286f06b27c3f4d853ff0f82f964ce, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 90f3a6d690000e240a43c8d283033da9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 55d7dec30eb488d418e6f5e2d218b314, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aa449f1b426a3bc4088e629e0afc5946, type: 2}

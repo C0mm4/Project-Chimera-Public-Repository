@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48894f68584d49846b34a90ee6d0d741, type: 3}
+  m_Name: W_S_Sword_Enemy_Knight
+  m_EditorClassIdentifier: 
+  id: 510002
+  weaponName: "\uAE30\uC0AC\uB2E8\uC7A5\uC758 \uAC80"
+  cardGrade: 1
+  Description: "\uAE30\uC0AC\uB2E8\uC7A5\uC758 \uAD8C\uC704\uC640 \uD798\uC744 \uB2F4\uC740
+    \uC7A5\uAC80"
+  category: 0
+  mechainc: 2
+  element: 0
+  Damage: 40
+  AttackCooldown: 1.4
+  ScanRange: 3.8
+  aoeRadius: 3.8
+  hitCount: 1
+  pierceCount: 1
+  ProjectileID: 
+  ProjectileSpeed: 0
+  ProjectileArcHeight: 0
+  hitboxActiveDuration: 0.1
+  targetLayer:
+    serializedVersion: 2
+    m_Bits: 32960
+  upgradeDataID: 580000
+  impact_fx: {fileID: 8300000, guid: f0a327bd639e5462a8bc18cef19dbcba, type: 3}
+  sound_fx: {fileID: 0}
