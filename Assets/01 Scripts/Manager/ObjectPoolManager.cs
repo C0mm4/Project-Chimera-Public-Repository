@@ -154,4 +154,10 @@ public class ObjectPoolManager : Singleton<ObjectPoolManager>
 
         return stack.ContainsKey(addressableKey);
     }
+
+    public void ClearAllPool()
+    {
+        stack.Clear();
+        poolOther.Clear();
+    }
 }

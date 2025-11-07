@@ -110,10 +110,19 @@ public class CardDrawEndUI : PopupUIBase
 
         CardMenuUI cardmenuui = null;
         bool isFinished = false;
-        _ = UniTask.RunOnThreadPool(async () =>
+
+        _ = UniTask.Create(async () =>
         {
+#if UNITY_WEBGL
             cardmenuui = await UIManager.Instance.GetUI<CardMenuUI>();
             isFinished = true;
+#else
+            await UniTask.RunOnThreadPool(async () =>
+            {
+                cardmenuui = await UIManager.Instance.GetUI<CardMenuUI>();
+                isFinished = true;
+            });
+#endif
         });
 
         while (!isFinished)
@@ -183,11 +192,20 @@ public class CardDrawEndUI : PopupUIBase
             GameObject cardObj = null;
             isFinished = false;
 
-            _ = UniTask.RunOnThreadPool(async () =>
+            _ = UniTask.Create(async () =>
             {
+#if UNITY_WEBGL
                 cardObj = await ObjectPoolManager.Instance.GetPool($"{grade}_Card", cardContentParent);
                 isFinished = true;
+#else
+                await UniTask.RunOnThreadPool(async () =>
+                {
+                    cardObj = await ObjectPoolManager.Instance.GetPool($"{grade}_Card", cardContentParent);
+                    isFinished = true;
+                });
+#endif
             });
+
 
             while (!isFinished)
             {
@@ -229,11 +247,17 @@ public class CardDrawEndUI : PopupUIBase
 
                 //전설 또는 영웅일경우
 
-                CardFusionUI cardFusionUI = null;
+                CardDrawSpecialUI specialdraw = null;
                 isFinished = false;
-                _ = UniTask.RunOnThreadPool(async () =>
+
+                _ = UniTask.Create(async () => 
                 {
-                    cardFusionUI = await UIManager.Instance.GetUI<CardFusionUI>();
+                    specialdraw = await UIManager.Instance.OpenPopupUI<CardDrawSpecialUI>();
+                    specialdraw.cardGrade = grade;
+                    specialdraw.animationPlay = false;
+                    specialdraw.fusionAnimation = false;
+                    specialdraw.cardDesciption = cardDecriptionText;
+                    specialdraw.soNumber = cardObjCardData.soNumber;
                     isFinished = true;
                 });
 
@@ -241,18 +265,8 @@ public class CardDrawEndUI : PopupUIBase
                 {
                     yield return null;
                 }
-
-
-                cardFusionUI.uiLoad.cardGrade = grade;
-                cardFusionUI.uiLoad.animationPlay = false;
-                cardFusionUI.uiLoad.fusionAnimation = false;
-                cardFusionUI.uiLoad.cardDesciption = cardDecriptionText;
-                cardFusionUI.uiLoad.soNumber = cardObjCardData.soNumber;
                 
-                var uiOpenHandle = UIManager.Instance.OpenPopupUI<CardDrawSpecialUI>();
-                yield return uiOpenHandle.ToCoroutine();
-
-                while (!cardFusionUI.uiLoad.animationPlay)
+                while (!specialdraw.animationPlay)
                 {
                     yield return null;
                 }

@@ -30,7 +30,7 @@ public class PauseUI : PopupUIBase
         // 카드 목록 채우기
         PopulateCards();
 
-        Debug.Log("일시정지 메뉴가 열렸습니다.");
+//        Debug.Log("일시정지 메뉴가 열렸습니다.");
     }
 
     protected override void OnClose()
@@ -42,7 +42,7 @@ public class PauseUI : PopupUIBase
         restartButton.onClick.RemoveAllListeners();
         settingsButton.onClick.RemoveAllListeners();
 
-        Debug.Log("일시정지 메뉴가 닫혔습니다.");
+//        Debug.Log("일시정지 메뉴가 닫혔습니다.");
     }
 
     private void PopulateCards()

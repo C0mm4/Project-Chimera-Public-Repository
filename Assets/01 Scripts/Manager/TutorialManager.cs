@@ -14,6 +14,7 @@ public class TutorialManager : Singleton<TutorialManager>
 
     public bool doNextTutorial = false;
     bool isCompletePreviousTutorial = false;
+    public bool IsPlayingTutorial = false;
 
     public SO_TutorialData currentData;
 
@@ -21,7 +22,8 @@ public class TutorialManager : Singleton<TutorialManager>
 
     bool isDone = false;
 
-    private async void Awake()
+
+    public async UniTask LoadData()
     {
         tutorialDataList.Add(await ResourceManager.Instance.Load<SO_TutorialData>("Tutorial01"));
         tutorialDataList.Add(await ResourceManager.Instance.Load<SO_TutorialData>("Tutorial02"));
@@ -38,7 +40,15 @@ public class TutorialManager : Singleton<TutorialManager>
 
     IEnumerator RunTutorialSequence()
     {
-        yield return new WaitUntil(() => isDone == true);
+        while (!isDone)
+        {
+            yield return null;
+        }
+
+        if (GameManager.Instance.Player.GetComponent<PlayerController>().TargetVelocity != Vector2.zero)
+        {
+            GameManager.Instance.Player.GetComponent<PlayerController>().TargetVelocity = Vector2.zero;
+        }
 
         for (int i = 0; i < tutorialDataList.Count - 1; i++)
         {
@@ -55,17 +65,28 @@ public class TutorialManager : Singleton<TutorialManager>
 
     }
 
-    public void StartTutorialData(SO_TutorialData tutorialData, Action callback = null)
+    public async void StartTutorialData(SO_TutorialData tutorialData, Action callback = null)
     {
         if (tutorialData == null || tutorialData.Data.Count < 1) return;
 
+        IsPlayingTutorial = true;
+        StageManager.Instance.isPlayCanMove = false;
+        bool isOpenUI = await UIManager.Instance.IsActiveUI<StructureUpgradeUI>();
+        if (isOpenUI)
+        {
+            UIManager.Instance.ClosePopupUI();
+        }
         StartCoroutine(RunTutorial(tutorialData, callback));
+        
     }
 
     IEnumerator RunTutorial(SO_TutorialData tutorialData, Action callback = null)
     {
         for (int i = 0; i < tutorialData.Data.Count; ++i)
         {
+            Task task = UIManager.Instance.BlockTouch();
+            yield return new WaitUntil(() => task.IsCompleted);
+
             if (tutorialData.Data[i].ShouldOpenUIName.Length > 0)
             {
                 while (UIManager.Instance.FindChildByNameInRoot(tutorialData.Data[i].ShouldOpenUIName) == null)
@@ -84,33 +105,41 @@ public class TutorialManager : Singleton<TutorialManager>
         }
         isCompletePreviousTutorial = true;
         callback?.Invoke();
+        StageManager.Instance.isPlayCanMove = true;
+        IsPlayingTutorial = false;
     }
 
     async void ProcessTutorialPageData(TutorialPageData tutorialData)
     {
-        doNextTutorial = false;
 
         if (tutorialData.TutorialType == TutorialType.Dialogue)
         {
+            await UIManager.Instance.EnableTouch();
             DialoguePopupUI dialoguePopupUI = await UIManager.Instance.GetUI<DialoguePopupUI>();
             await UIManager.Instance.OpenPopupUI<DialoguePopupUI>(true);
             dialoguePopupUI.StartTyping(tutorialData.Dialogue);
-            return;
         }
 
         if (tutorialData.TutorialType == TutorialType.Destination)
         {
             GenerateDestination(tutorialData.DestinationPosition);
-            return;
         }
 
         if (tutorialData.TutorialType == TutorialType.ClickUI)
         {
+            if (tutorialData.TargetUIElementName.Length < 1)
+            {
+                return;
+            }
+            await UIManager.Instance.EnableTouch();
+
             UIManager.Instance.HighlightUIElement(tutorialData.TargetUIElementName);
-            return;
         }
+
+        doNextTutorial = false;
+
     }
-    
+
 
     async UniTask<DialoguePopupUI> GetDialoguePopupUI()
     {
@@ -124,7 +153,6 @@ public class TutorialManager : Singleton<TutorialManager>
 
     public async void GenerateDestination(Vector3 pos)
     {
-        UIManager.Instance.BlockTouch();
         GameObject go = await ResourceManager.Instance.Create<GameObject>("Destination");
         Destination dest = go.GetComponent<Destination>();
         dest.transform.position = pos;

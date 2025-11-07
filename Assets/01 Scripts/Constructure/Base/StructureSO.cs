@@ -11,22 +11,18 @@ public class LevelData
 public class StructureSO : BaseStatusSO
 {
     [Header("SO Number")]
-    public int soNumber;
+    public int soNumber;    // 카드의 id Number 
 
     [Header("건물 정보")]
-    public string SpriteID;
-    public string CardName;
+    public string SpriteID; // 카드의 Sprite Path
+    public string CardName; // 카드의 이름
     [TextArea]
-    public string CardDesc;
-    [Header("건물 업그레이드 정보")]
-    public List<LevelData> levelProgressionData = new(); // 성장 조건(레벨업에 필요한 코스트)
+    public string CardDesc; // 카드의 설명
 
-    public int upgradeGoldTableSOID = 399999;
-/*
-    public int GetMaxLevel()
-    {
-        // 생성된 LevelData 만큼 최대 레벨 증가
-        return levelProgressionData.Count + 1;
-    }*/
+    [Header("건물 업그레이드 정보")]
+    public List<LevelData> levelProgressionData = new(); // 업그레이드 모델을 담는 리스트
+
+    public int upgradeGoldTableSOID = 399999;   // 업그레이드 골드 테이블 ID
+
 
 }

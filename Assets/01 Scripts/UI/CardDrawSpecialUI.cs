@@ -44,7 +44,7 @@ public class CardDrawSpecialUI : PopupUIBase
 
     [Header("설정")]
     public bool animationPlay;
-    public string cardGrade;
+    public string cardGrade { get; set; }
     public string cardDesciption;
 
     private Tween shakeTween;
@@ -165,11 +165,21 @@ public class CardDrawSpecialUI : PopupUIBase
     {
         bool isFinished = false;
         StructureSO data = null;
-        _ = UniTask.RunOnThreadPool(async () =>
+
+        _ = UniTask.Create(async () =>
         {
+#if UNITY_WEBGL
             data = await DataManager.Instance.GetSOData<StructureSO>(soNumber);
             isFinished = true;
+#else
+            await UniTask.RunOnThreadPool(async () =>
+            {
+                data = await DataManager.Instance.GetSOData<StructureSO>(soNumber);
+                isFinished = true;
+            });
+#endif
         });
+
 
         while (!isFinished)
         {
@@ -181,7 +191,7 @@ public class CardDrawSpecialUI : PopupUIBase
 
         Sprite iconSprite = null;
 
-        _ = UniTask.RunOnThreadPool(async () =>
+        _ = UniTask.Create(async () =>
         {
             var sprHandle = ResourceManager.Instance.Load<Sprite>(data.SpriteID);
             string sprPath = null;

@@ -14,7 +14,7 @@ public class DialoguePopupUI : PopupUIBase
     bool isTyping = false;
     string currentText = string.Empty;
 
-    WaitForSeconds typingDelay;
+    WaitForSecondsRealtime typingDelay;
 
     private void Start()
     {
@@ -25,7 +25,7 @@ public class DialoguePopupUI : PopupUIBase
     {
         if (typingDelay == null)
         {
-            typingDelay = new WaitForSeconds(typingSpeed);
+            typingDelay = new WaitForSecondsRealtime(typingSpeed);
         }
 
         if (typingCoroutine != null)

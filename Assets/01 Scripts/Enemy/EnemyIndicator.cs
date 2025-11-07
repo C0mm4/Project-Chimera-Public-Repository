@@ -150,11 +150,13 @@ public class EnemyIndicator : MonoBehaviour
         indicatorStart = true;
         await UniTask.Delay(3000);
 
-        foreach (Transform child in monsterArrowBox)
+        if (monsterArrowBox != null)
         {
-            child.gameObject.SetActive(false);
+            foreach (Transform child in monsterArrowBox)
+            {
+                child.gameObject.SetActive(false);
+            }
         }
-
         indicatorStart = false;
     }
 

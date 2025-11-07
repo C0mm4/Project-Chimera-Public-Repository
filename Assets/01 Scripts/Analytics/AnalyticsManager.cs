@@ -114,7 +114,7 @@ public class AnalyticsManager : Singleton<AnalyticsManager>
 
     public void CardFusion(int totalDraw, string grade, string resultID)
     {
-        Debug.Log($"{totalDraw} {grade} {resultID}");
+//        Debug.Log($"{totalDraw} {grade} {resultID}");
         var customEvent = new CustomEvent("card_fusion")
         {
             { "drawCount", totalDraw },

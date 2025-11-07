@@ -1,3 +1,5 @@
+using Cysharp.Threading.Tasks;
+using DG.Tweening.Plugins.Core.PathCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
@@ -25,7 +27,7 @@ public class GameManager : Singleton<GameManager>
     private void Awake()
     {
         //테스트용 더미 카드 생성
-        TestData();
+//        TestData();
         
 
         // 인스펙터용 리스트로 복사
@@ -50,14 +52,10 @@ public class GameManager : Singleton<GameManager>
     public List<ScriptableObject> cardDatas = new();
 
 
-    public void GameStart()
+    public async UniTask GameStart()
     {
-       
-    }
 
-    private async void Start()
-    {
-        UIManager.Instance.OpenUI<GameplayUI>();
+        await UIManager.Instance.OpenUI<GameplayUI>();
         // 볼륨 설정값 반영위해서 열었다 닫기
         var ui = await UIManager.Instance.GetUI<SettingUI>();
         ui.OpenUI();
@@ -66,10 +64,13 @@ public class GameManager : Singleton<GameManager>
         SoundManager.Instance.PlayBGM("MainBGM");
         TutorialManager test = TutorialManager.Instance;
         //so라벨화 로드
+        cardDatas.Clear();
         StartCoroutine(SODataLoad("cardSO", true));
 
-        //처음 가지고 있는 카드 세팅 해야함
-        //StartCoroutine(SODataLoad("startCardSO", true));
+    }
+    public void ResetGame()
+    {
+        StageManager.data.CurrentStage = 1;
     }
 
     private void StartCardSetting(int soNumber)
@@ -82,7 +83,7 @@ public class GameManager : Singleton<GameManager>
     public void GameSave()
     {
         var data = JsonConvert.SerializeObject(StageManager.data);
-      //  Debug.Log(data);
+        //Debug.Log(data);
 
         CryptoManager crypt = new();
         var encrypted = crypt.EncryptString(data);
@@ -95,6 +96,31 @@ public class GameManager : Singleton<GameManager>
 
         File.WriteAllText(path, encrypted);
 
+#endif
+    }
+
+    public void RemoveSave()
+    {
+
+#if UNITY_WEBGL
+
+
+        if (PlayerPrefs.HasKey("SaveData"))
+        {
+            PlayerPrefs.DeleteKey("SaveData");
+        }
+        else
+            return;
+
+#else
+        string path = string.Concat(Application.persistentDataPath, "/save.dat");
+
+        if (File.Exists(path))
+        {
+            //   Debug.Log("There is no save data");
+            File.Delete(path);
+            return;
+        }
 #endif
     }
 
@@ -132,7 +158,7 @@ public class GameManager : Singleton<GameManager>
         }
 
         json = crypt.DecryptString(encryptedData);
-       // Debug.Log(json);
+//        Debug.Log(json);
 
         try
         {
@@ -162,7 +188,10 @@ public class GameManager : Singleton<GameManager>
             isDone = true;
         });
 
-        yield return new WaitUntil(() => isDone);
+        while (!isDone)
+        {
+            yield return null;
+        }
 
         
         foreach (ScriptableObject data in loadedList)

@@ -147,7 +147,7 @@ public class LoadingUIAnimator : MonoBehaviour
 
     public Sequence PlayOpenAnimation(Action onComplete)
     {
-        Debug.Log("Animator: PlayOpenAnimation called."); // 로그 추가
+//        Debug.Log("Animator: PlayOpenAnimation called."); // 로그 추가
 
         Sequence allOpenSequence = DOTween.Sequence().SetUpdate(true);
 

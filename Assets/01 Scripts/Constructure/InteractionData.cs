@@ -7,6 +7,7 @@ public class InteractionData
 {
     public string Title;
     public string Description;
+    public string spritePath;
     public List<(string buttonText, UnityAction action)> ButtonActions;
 }
 

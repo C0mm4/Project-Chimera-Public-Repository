@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PopupUIBase : UIBase
 {
+    [Header("팝업 세팅")]
+    [Tooltip("이 팝업이 열릴 때 Time.timeScale을 0으로 설정할지 여부입니다.")]
+    public bool pauseGameWhenOpen = true;
+
     void Start()
     {
         Canvas canvas = GetComponent<Canvas>();

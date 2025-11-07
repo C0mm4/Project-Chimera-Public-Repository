@@ -26,6 +26,7 @@ public class CurrencyPanelUI : MonoBehaviour
             StageManager.Instance.OnCoinChanged += UpdateSoulCoin;
             StageManager.Instance.OnCardDustChanged += UpdateLegendaryDust;
         }
+
     }
 
     private void OnDisable()

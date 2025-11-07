@@ -118,10 +118,6 @@ public class CardSelectUI : PopupUIBase
             var isMatch = currentData.soNumber / 10000 == card / 10000;
             if (!isMatch || card == currentData.soNumber) continue;
             var obj = await ObjectPoolManager.Instance.GetPool(cardPrefID, transform);
-            if(card == 303000)
-            {
-                Debug.Log("레전 있음");
-            }
             objs.Add(obj);
             obj.transform.SetParent(invenTrans, false);
             obj.transform.localScale = Vector3.one;

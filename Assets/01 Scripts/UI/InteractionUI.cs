@@ -14,8 +14,6 @@ public class InteractionUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private List<ButtonAnimator> actionButtons;
     
-    [Header("배경 닫기")]
-    [SerializeField] private Button backgroundClosePanelButton;
 
     private IInteractable currentInteractable;
 
@@ -28,30 +26,21 @@ public class InteractionUI : MonoBehaviour
             return;
         }
         Instance = this;
-
-        if (backgroundClosePanelButton != null)
-        {
-            backgroundClosePanelButton.onClick.AddListener(HidePanel);
-        }
-        else
-        {
-             Debug.LogError("[InteractionUI] 배경 닫기 패널(버튼) 미연결!");
-        }
+        
     }
 
     private void Start()
     {
         // 시작 시 패널과 배경 버튼 모두 숨김
         if (interactionPanel != null) interactionPanel.SetActive(false);
-        if (backgroundClosePanelButton != null) backgroundClosePanelButton.gameObject.SetActive(false);
     }
 
     public async void ShowPanel(IInteractable interactable)
     {
         // Debug.Log("호출");
-        await UIManager.Instance.OpenPopupUI<StructureUpgradeUI>();
         var ui = await UIManager.Instance.GetUI<StructureUpgradeUI>();
-        ui.ShowPanel(interactable);
+        await ui.ShowPanel(interactable);
+        await UIManager.Instance.OpenPopupUI<StructureUpgradeUI>();
         /*
         if (interactionPanel == null) { Debug.LogError("[InteractionUI] Interaction Panel 미연결!"); return; }
         if (interactable == null) { Debug.LogError("[InteractionUI] 상호작용 대상(interactable) null!"); return; }

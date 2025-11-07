@@ -18,6 +18,7 @@ public class StageManager : Singleton<StageManager>
     public event Action OnStageStart;
 
     public static GameData data;
+    public bool isPlayCanMove;
 
     public StageState state = StageState.Ready;
 
@@ -37,21 +38,30 @@ public class StageManager : Singleton<StageManager>
 
     private void Awake()
     {
-        data = new GameData();
-        data.CurrentStage = 1;
-        state = StageState.Ready;
-        GetGold(1000);
-
+        NewData();
         OnStageClear += ClearCallback;
         OnStageClear += ShowGameClearUI;
         OnStageFail += FailCallback;
         OnStageFail += ShowGameFailUI;
+        isPlayCanMove = true;
+    }
+
+    public void NewData()
+    {
+        data = new GameData();
+        data.CurrentStage = 1;
+        state = StageState.Ready;
+
+        isPlayCanMove = true;
+        GetGold(1000);
     }
 
     public void FailStage(bool isBaseDeath)
     {
         if (state != StageState.InPlay) return;
         state = StageState.None;
+
+//        Debug.Log("Stage Fail");
 
         SoundManager.Instance.StopBGM();
         SoundManager.Instance.PlaySFX("StageFail");
@@ -96,6 +106,7 @@ public class StageManager : Singleton<StageManager>
 
     private void FailCallback()
     {
+//        Debug.Log("FailCallback");
         state = StageState.Ready;
         AnalyticsManager.Instance.StageEndFlag(data.CurrentStage, false, Time.time - stageStartTime);
         ConsumeResource(data.getGoldCurrentStage);
@@ -204,6 +215,7 @@ public class StageManager : Singleton<StageManager>
 
     private async void ShowGameClearUI()
     {
+//        Debug.Log("StageEndUI");
         GameEndUI gameEndPopup = await UIManager.Instance.GetUI<GameEndUI>();
         gameEndPopup.SetResult(true); // 승리면 true, 실패면 false
 

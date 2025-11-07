@@ -53,7 +53,6 @@ public class CardSelectDustFusionUI : PopupUIBase
     private void FusionDust()
     {
         if (StageManager.data.cardDust < 10 && !checkButton) return;
-        Debug.Log("asdsad");
         StageManager.data.cardDust -= 10;
         checkButton = true;
 
@@ -71,11 +70,21 @@ public class CardSelectDustFusionUI : PopupUIBase
         ScriptableObject data = null;
         bool isFinished = false;
 
-        _ = UniTask.RunOnThreadPool(async () =>
+        _ = UniTask.Create(async () =>
         {
+#if UNITY_WEBGL
             data = await DataManager.Instance.GetSOData<ScriptableObject>(soNum);
             isFinished = true;
+#else
+            await UniTask.RunOnThreadPool(async () =>
+            {
+                data = await DataManager.Instance.GetSOData<ScriptableObject>(soNum);
+                isFinished = true;
+            });
+
+#endif
         });
+
 
         while (!isFinished)
         {
@@ -89,11 +98,18 @@ public class CardSelectDustFusionUI : PopupUIBase
 
         yield return new WaitForSeconds(0.1f);
 
-        CardFusionUI cardFusionUI = null;
+
+        CardDrawSpecialUI specialdraw = null;
         isFinished = false;
-        _ = UniTask.RunOnThreadPool(async () =>
+
+        _ = UniTask.Create(async () =>
         {
-            cardFusionUI = await UIManager.Instance.GetUI<CardFusionUI>();
+            specialdraw = await UIManager.Instance.OpenPopupUI<CardDrawSpecialUI>();
+            specialdraw.cardGrade = "L";
+            specialdraw.animationPlay = false;
+            specialdraw.fusionAnimation = false;
+            specialdraw.cardDesciption = cardDecriptionText;
+            specialdraw.soNumber = soNum;
             isFinished = true;
         });
 
@@ -102,17 +118,7 @@ public class CardSelectDustFusionUI : PopupUIBase
             yield return null;
         }
 
-        cardFusionUI.uiLoad.animationPlay = false;
-        cardFusionUI.uiLoad.fusionAnimation = true;
-        cardFusionUI.uiLoad.soNumber = soNum;
-        cardFusionUI.uiLoad.cardDesciption = cardDecriptionText;
-
-
-        UniTask<CardDrawSpecialUI> uiOpenHandle = UIManager.Instance.OpenPopupUI<CardDrawSpecialUI>();
-        
-        yield return uiOpenHandle.ToCoroutine();
-
-        while (!cardFusionUI.uiLoad.animationPlay)
+        while (!specialdraw.animationPlay)
         {
             yield return null;
         }

@@ -30,4 +30,10 @@ public class SpeedManager : Singleton<SpeedManager>
         Time.timeScale = newSpeed;
         OnSpeedChanged?.Invoke(newSpeed);
     }
+
+    public void ResetSpeed()
+    {
+        Time.timeScale = 1f;
+        OnSpeedChanged?.Invoke(1f);
+    }
 }

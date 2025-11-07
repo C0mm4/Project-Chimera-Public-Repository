@@ -9,13 +9,17 @@ public class InPlayScene : SceneBase
     public async override UniTask<bool> OnSceneEnter()
     {
         await ResourceManager.Instance.Create<GameObject>("InGame");
-        
+        await GameManager.Instance.GameStart();
+
 #if UNITY_EDITOR
+        StageManager.Instance.NewData();
 #else
+
         GameManager.Instance.GameLoad();
-#endif
+#endif        
         if (StageManager.data.ShouldTutorial)
         {
+            await TutorialManager.Instance.LoadData();
             TutorialManager.Instance.StartTutorial();
         }
         return true;

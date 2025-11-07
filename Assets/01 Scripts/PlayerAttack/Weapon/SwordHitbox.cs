@@ -40,7 +40,7 @@ public class SwordHitbox : MonoBehaviour
         if (other.TryGetComponent<CharacterStats>(out var status))
         {
             status.TakeDamage(transform, damage);
-            Debug.Log(other.name + "에게 " + damage + " 데미지!");
+//            Debug.Log(other.name + "에게 " + damage + " 데미지!");
         }
     }
 }

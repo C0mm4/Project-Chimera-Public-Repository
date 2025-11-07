@@ -8,12 +8,22 @@ using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class ResourceManager : Singleton<ResourceManager>
 {
+    // 로드된 핸들 Dict
     private Dictionary<string, AsyncOperationHandle> handleDict = new();
+
+    // 로딩 중인 핸들 dict
     public Dictionary<string, bool> isLoadDict { get; private set; } = new();
     
     public async UniTask<T> Load<T>(string prefName) where T : Object
     {
+#if UNITY_WEBGL
         await UniTask.SwitchToMainThread();
+#endif
+        // 중복 로드 시도 시 일단 대기
+        while (isLoadDict.ContainsKey(prefName))
+        {
+            await UniTask.Yield(PlayerLoopTiming.Update);
+        }
 
         var handle = Addressables.LoadAssetAsync<T>(prefName);
         isLoadDict[prefName] = true;
@@ -38,6 +48,16 @@ public class ResourceManager : Singleton<ResourceManager>
         }
     }
 
+    public void ReleaseAll()
+    {
+        foreach(var handle in handleDict.Values) 
+        {
+            Addressables.Release(handle);
+        }
+        handleDict.Clear();
+        isLoadDict.Clear();
+    }
+
 
     public async UniTask<T> Create<T>(string path, Transform parent = null) where T : Object
     {
@@ -58,15 +78,6 @@ public class ResourceManager : Singleton<ResourceManager>
         return Create<T>(key, parent);
     }
 
-    public UniTask<T> CreateCharacter<T>(string prefName, Transform parent = null)  where T : Object
-    {
-        return Create<T>(Path.Character, prefName, parent);
-    }
-    
-    public UniTask<T> CreateMap<T>(string prefName, Transform parent = null)  where T : Object
-    {
-        return Create<T>(Path.Map, prefName, parent);
-    }
     
     public UniTask<T> CreateUI<T>(string prefName, Transform parent = null)  where T : Object
     {

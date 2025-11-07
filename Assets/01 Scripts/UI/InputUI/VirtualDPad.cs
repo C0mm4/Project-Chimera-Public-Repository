@@ -11,7 +11,7 @@ public class VirtualDPad : MonoBehaviour
 
     public void OnDragHandler(PointerEventData eventData)
     {
-        if (stick != null)
+        if (stick != null && !TutorialManager.Instance.IsPlayingTutorial)
         {
             stick.OnDrag(eventData);
         }

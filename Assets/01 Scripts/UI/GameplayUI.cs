@@ -112,23 +112,34 @@ public class GameplayUI : UIBase
     // A. 환경 설정
     private async void OnSettingsButtonClicked()
     {
-        await UIManager.Instance.OpenPopupUI<SettingUI>();
-        SoundManager.Instance.PlaySFX(onClickButtonSound);
+        if (!TutorialManager.Instance.IsPlayingTutorial)
+        {
+            await UIManager.Instance.OpenPopupUI<SettingUI>();
+            SoundManager.Instance.PlaySFX(onClickButtonSound);
+        }
     }
 
     // B. 카드 관리
     private async void OnCardManagementButtonClicked()
     {
-        // Todo : 카드를 보관, 뽑기 등등 팝업 UI 활성화
-        await UIManager.Instance.OpenPopupUI<CardMenuUI>();
-        SoundManager.Instance.PlaySFX(onClickButtonSound);
+        if(StageManager.Instance.state == StageState.Ready)
+        {
+            // Todo : 카드를 보관, 뽑기 등등 팝업 UI 활성화
+            await UIManager.Instance.OpenPopupUI<CardMenuUI>();
+            SoundManager.Instance.PlaySFX(onClickButtonSound);
+        }
     }
 
     // C. 환생
-    private void OnReincarnationButtonClicked()
+    private async void OnReincarnationButtonClicked()
     {
         // Todo : 환생에 대한 팝업 UI 열기 버튼
-        StageManager.Instance.PerformRebirth();
+        ConfirmCancelUI ui = await UIManager.Instance.OpenPopupUI<ConfirmCancelUI>();
+        ui.Initialize("환생", "스테이지의 진행도를 초기화 합니다.\n(보유한 재화와 카드 정보는 유지됩니다)",
+            GameManager.Instance.ResetGame, null, "환생하기");
+
+        GameManager.Instance.ResetGame();
+//        StageManager.Instance.PerformRebirth();
         SoundManager.Instance.PlaySFX(onClickButtonSound);
 
     }
@@ -136,8 +147,11 @@ public class GameplayUI : UIBase
     // E. 배속
     private void OnSpeedButtonClicked()
     {
-        SpeedManager.Instance.ToggleSpeed();
-        SoundManager.Instance.PlaySFX(onClickButtonSound);
+        if (!TutorialManager.Instance.IsPlayingTutorial)
+        {
+            SpeedManager.Instance.ToggleSpeed();
+            SoundManager.Instance.PlaySFX(onClickButtonSound);
+        }
 
     }
 
@@ -270,5 +284,10 @@ public class GameplayUI : UIBase
         ui.UpdateUI(targetStructure);
         SoundManager.Instance.PlaySFX(onClickButtonSound);
 
+    }
+
+    public void ActiveBarrack()
+    {
+        commandBtn.gameObject.SetActive(true);
     }
 }

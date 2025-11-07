@@ -27,11 +27,6 @@ public class InteractionTrigger : MonoBehaviour
                     Debug.LogError("[InteractionTrigger] 부모 ConstructureSeed를 찾을 수 없음!");
                 }
             }
-            // (선택 사항) 스테이지 진행 중일 때 로그 표시
-            else if (StageManager.Instance != null && StageManager.Instance.state == StageState.InPlay)
-            {
-                Debug.Log("스테이지 진행 중이라 상호작용 UI를 표시하지 않음.");
-            }
             else if (StageManager.Instance == null)
             {
                 Debug.LogError("[InteractionTrigger] StageManager.Instance를 찾을 수 없음!");

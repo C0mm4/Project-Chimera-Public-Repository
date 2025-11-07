@@ -99,7 +99,7 @@ public class CardManagementUI : PopupUIBase
     {
         await UIManager.Instance.OpenPopupUI<CardSelectUI>();
         var ui = await UIManager.Instance.GetUI<CardSelectUI>();
-        Debug.Log(targetSTructure);
+//        Debug.Log(targetSTructure);
         ui.UpdateUI(targetSTructure, targetSTructure.GetSO());
         SoundManager.Instance.PlaySFX(onClickButtonSound);
 

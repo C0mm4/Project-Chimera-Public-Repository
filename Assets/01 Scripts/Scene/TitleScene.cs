@@ -14,12 +14,12 @@ public class TitleScene : SceneBase
         return true;
     }
 
-    public override UniTask<bool> OnSceneEnter()
+    public override async UniTask<bool> OnSceneEnter()
     {
         // Todo: 타이틀 UI 열기
-        UIManager.Instance.OpenUI<TitleUI>();
+        await UIManager.Instance.OpenUI<TitleUI>();
         // Todo: 배경음악 재생
-        return UniTask.FromResult(true);
+        return true;
     }
 
     public override void OnSceneExit()

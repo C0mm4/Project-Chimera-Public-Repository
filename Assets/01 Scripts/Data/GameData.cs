@@ -37,6 +37,8 @@ public class GameData
     public int cardDust; //카드가루
 
     public bool ShouldTutorial = true;
+    public bool isPlayCardTutorial = false;
+    public bool isPlayReincanationTutorial = false;
     public int drawCount;
 
 

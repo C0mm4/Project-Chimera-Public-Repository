@@ -102,4 +102,14 @@ public class DataManager : Singleton<DataManager>
             SODataDict.Remove(ID);
         }
     }
+
+    public void ReleaseAllData()
+    {
+        foreach (var data in SODataDict.Keys)
+        {
+            ResourceManager.Instance.Release(data);
+        }
+
+        SODataDict.Clear();
+    }
 }

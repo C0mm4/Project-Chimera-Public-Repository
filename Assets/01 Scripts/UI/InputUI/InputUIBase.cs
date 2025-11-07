@@ -18,6 +18,11 @@ public class InputUIBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnDrag(PointerEventData eventData)
     {
+        if (TutorialManager.Instance.IsPlayingTutorial)
+        {
+            OnPointerUp(eventData);
+            return;
+        }
         if (isClick)
         {
             dpad.OnDragHandler(eventData);
@@ -26,6 +31,7 @@ public class InputUIBase : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        if (TutorialManager.Instance.IsPlayingTutorial) return;
         RectTransformUtility.ScreenPointToLocalPointInRectangle(
             rect,
             eventData.position,

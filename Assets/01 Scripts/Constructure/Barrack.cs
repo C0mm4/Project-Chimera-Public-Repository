@@ -13,7 +13,6 @@ public class Barrack : StructureBase
 
     [SerializeField] private BarrackData barrackData;
 
-//    private float lastSpawnTime;
     private float spawnWaitTime;
 
     private List<GameObject> spawnUnits = new();
@@ -44,7 +43,7 @@ public class Barrack : StructureBase
         barrackData.spawnCount = so.spawnCount;
     }
 
-    protected override void BuildEffect()
+    protected override async void BuildEffect()
     {
         base.BuildEffect();
         SavePositions();
@@ -56,6 +55,8 @@ public class Barrack : StructureBase
             Spawn(i);
         }
         //ObjectPoolManager.Instance.CreatePool(barrackData.spawnUnitKey,  4, transform);
+        var ui = await UIManager.Instance.GetUI<GameplayUI>();
+        ui.ActiveBarrack();
     }
 
     protected override void DestroyEffect()

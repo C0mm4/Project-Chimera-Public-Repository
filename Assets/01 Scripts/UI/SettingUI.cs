@@ -99,8 +99,8 @@ public class SettingUI : PopupUIBase
         if (backButton != null) backButton.OnClickAnimationComplete.AddListener(OnBackButtonClicked);
         if (bgBackButton != null) bgBackButton.onClick.AddListener(OnBackButtonClicked);
 
-        if (saveButton != null) saveButton.OnClickAnimationComplete.AddListener(GameManager.Instance.GameSave);
-        if (loadButton != null) loadButton.OnClickAnimationComplete.AddListener(GameManager.Instance.GameLoad);
+        if (saveButton != null) saveButton.OnClickAnimationComplete.AddListener(OnClickSaveButton);
+        if (loadButton != null) loadButton.OnClickAnimationComplete.AddListener(OnClickLoadButton);
     }
 
     protected override void OnClose()
@@ -325,6 +325,24 @@ public class SettingUI : PopupUIBase
         int targetFrame = frameRates[currentFrameIndex];
         Application.targetFrameRate = targetFrame;
         frameText.text = targetFrame.ToString();
+    }
+
+    private async void OnClickSaveButton()
+    {
+        if(StageManager.Instance.state == StageState.Ready)
+        {
+            ConfirmCancelUI ui = await UIManager.Instance.OpenPopupUI<ConfirmCancelUI>();
+            ui.Initialize("저장하기", "게임을 저장하시겠습니까?", GameManager.Instance.GameSave, null, "저장하기");
+        }
+    }
+
+    private async void OnClickLoadButton()
+    {
+        if(StageManager.Instance.state == StageState.Ready)
+        {
+            ConfirmCancelUI ui = await UIManager.Instance.OpenPopupUI<ConfirmCancelUI>();
+            ui.Initialize("불러오기", "저장된 게임을 불러오사겠습니까?", GameManager.Instance.GameLoad, null, "불러오기");
+        }
     }
 
     // ----- 게임 언어 설정 -----

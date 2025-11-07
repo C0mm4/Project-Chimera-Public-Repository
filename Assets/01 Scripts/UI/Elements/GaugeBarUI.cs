@@ -98,6 +98,7 @@ public class GaugeBarUI : MonoBehaviour
 
     private void ShowGaugeBar()
     {
+        gameObject.SetActive(true);
         fillArea.gameObject.SetActive(true);
     }
 
@@ -110,6 +111,7 @@ public class GaugeBarUI : MonoBehaviour
 
     public void SetFillPercent(float percent)
     {
+        if (!gameObject.activeSelf) return;
         if (!fillArea.gameObject.activeInHierarchy)
         {
             ShowGaugeBar();

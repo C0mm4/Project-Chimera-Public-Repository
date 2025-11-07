@@ -119,9 +119,10 @@ public class ConstructureSeed : MonoBehaviour, IInteractable
         await BuildStructure();
     }
 
-    public async UniTask<StructureBase> BuildStructure()
+    public async UniTask<StructureBase> BuildStructure(bool isLoad = false)
     {
         string keyName = "";
+
         StructureSO so = null;
         switch (type)
         {
@@ -157,7 +158,9 @@ public class ConstructureSeed : MonoBehaviour, IInteractable
             if (structure != null)
             {
                 obj.GetComponent<StructureBase>().IndexNumber = indexNumber;
-                obj.GetComponent<StructureBase>().SetDataSO(so);
+                // 세이브 로드 중이면 기본 데이터 무시
+                if(!isLoad)
+                    obj.GetComponent<StructureBase>().SetDataSO(so);
                 Destroy(gameObject);
                 return structure;
             }
@@ -171,31 +174,36 @@ public class ConstructureSeed : MonoBehaviour, IInteractable
     {
         string title = "";
         string description = "";
-
+        string spritePath = "";
         switch (type)
         {
             case ConstructureType.Tower:
                 title = "포탑 건설";
                 description = $"짱 쎈 포탑을 건설.";
+                spritePath = "Spr_TowerIcon";
                 break;
             case ConstructureType.Barrack:
                 title = "배럭 건설";
                 description = $"도와줘! 친구들!.";
+                spritePath = "Spr_BarrackIcon";
                 break;
             case ConstructureType.GoldMining:
                 title = "금광 건설";
                 description = $"히히 돈 조아.";
+                spritePath = "Spr_HouseIcon";
                 break;
             case ConstructureType.Wall:
                 title = "방벽 건설";
                 description = $"넌 못 지나간다.";
+                spritePath = "Spr_WallIcon";
                 break;
         }
-        
+
         var data = new InteractionData
         {
             Title = title,
             Description = description,
+            spritePath = spritePath,
             ButtonActions = new List<(string, UnityAction)>
             {
                 ("건설(2골드)", StartConstruction),

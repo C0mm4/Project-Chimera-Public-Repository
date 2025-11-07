@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -33,7 +34,6 @@ public class StructureUpgradeUI : PopupUIBase
 
     private int currentUpgradeCost; // 업그레이드에 필요한 재료
     private int currentPlayerGold;  // 현재 플레이어가 가진 재료
-    [SerializeField] private Button backgroundClosePanelButton;
 
     protected override void OnOpen()
     {
@@ -44,10 +44,7 @@ public class StructureUpgradeUI : PopupUIBase
             StageManager.Instance.OnGoldChanged -= OnPlayerGoldChanged;
             OnPlayerGoldChanged(StageManager.data.Gold);
         }
-        if (backgroundClosePanelButton != null)
-        {
-            backgroundClosePanelButton.onClick.AddListener(HidePanel);
-        }
+        
     }
     public void HidePanel()
     {
@@ -66,8 +63,7 @@ public class StructureUpgradeUI : PopupUIBase
         {
             StageManager.Instance.OnGoldChanged -= OnPlayerGoldChanged;
         }
-        if(backgroundClosePanelButton != null)
-            backgroundClosePanelButton.onClick.RemoveAllListeners();
+
     }
     // ----- 기능 구현 -----
     // 외부에서 호출할 메인 메서드
@@ -102,21 +98,25 @@ public class StructureUpgradeUI : PopupUIBase
     [SerializeField] private TextMeshProUGUI descriptionText;
     [SerializeField] private List<ButtonAnimator> actionButtons;
 
-    public void ShowPanel(IInteractable interactable)
+    public async UniTask ShowPanel(IInteractable interactable)
     {
         currentInteractable = interactable;
         var data = currentInteractable.GetInteractionData();
 
+        var handle = ResourceManager.Instance.Load<Sprite>(data.spritePath);
+
         if (titleText != null) titleText.text = data.Title;
         if (descriptionText != null) descriptionText.text = data.Description;
 
+        structureImage.sprite = await handle;
+
         foreach (ButtonAnimator button in actionButtons)
         {
-            if (button != null)
-            {
-                button.OnClickAnimationComplete.RemoveAllListeners();
-                button.gameObject.SetActive(false);
-            }
+            //if (button != null)
+            //{
+            //    button.OnClickAnimationComplete.RemoveAllListeners();
+            //    button.gameObject.SetActive(false);
+            //}
         }
 
         for (int i = 0; i < data.ButtonActions.Count; i++)
@@ -132,7 +132,7 @@ public class StructureUpgradeUI : PopupUIBase
             UnityAction action = data.ButtonActions[i].action;
             if (action != null) currentButton.OnClickAnimationComplete.AddListener(action);
         }
-
+        
     }
 
 }

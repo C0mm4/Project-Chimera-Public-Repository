@@ -17,6 +17,7 @@ public class DataLoadManager : Singleton<DataLoadManager>
         return JsonConvert.SerializeObject(data, Formatting.Indented);
     }
 
+
     public T DeserializeFromJson<T>(string json)
     {
         T obj = JsonConvert.DeserializeObject<T>(json);

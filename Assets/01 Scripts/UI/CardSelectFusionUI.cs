@@ -395,10 +395,19 @@ public class CardSelectFusionUI : PopupUIBase
         {
             GameObject gamObj = null;
 
-            _ = UniTask.RunOnThreadPool(async () =>
+            _ = UniTask.Create(async () =>
             {
-                gamObj = await ObjectPoolManager.Instance.GetPool($"{grade}_Card", cardSelect); ;
+#if UNITY_WEBGL
+                gamObj = await ObjectPoolManager.Instance.GetPool($"{grade}_Card", cardSelect);
                 isFinished = true;
+#else
+                await UniTask.RunOnThreadPool(async () =>
+                {
+                    gamObj = await ObjectPoolManager.Instance.GetPool($"{grade}_Card", cardSelect);
+                    isFinished = true;
+                });
+
+#endif
             });
 
             while (!isFinished)
@@ -418,11 +427,18 @@ public class CardSelectFusionUI : PopupUIBase
         
         yield return new WaitForSeconds(0.1f);
 
-        CardFusionUI cardFusionUI = null;
+
+        CardDrawSpecialUI specialdraw = null;
         isFinished = false;
-        _ = UniTask.RunOnThreadPool(async () =>
+
+        _ = UniTask.Create(async () =>
         {
-            cardFusionUI = await UIManager.Instance.GetUI<CardFusionUI>();
+            specialdraw = await UIManager.Instance.OpenPopupUI<CardDrawSpecialUI>();
+            specialdraw.cardGrade = grade;
+            specialdraw.animationPlay = false;
+            specialdraw.fusionAnimation = false;
+            specialdraw.cardDesciption = cardDescriptionText;
+            specialdraw.soNumber = soNumber;
             isFinished = true;
         });
 
@@ -431,7 +447,35 @@ public class CardSelectFusionUI : PopupUIBase
             yield return null;
         }
 
-        cardFusionUI.uiLoad.cardGrade = grade;
+        while (!specialdraw.animationPlay)
+        {
+            yield return null;
+        }
+/*
+
+        CardFusionUI cardFusionUI = null;
+        isFinished = false;
+
+        _ = UniTask.Create(async () =>
+        {
+#if UNITY_WEBGL
+            cardFusionUI = await UIManager.Instance.GetUI<CardFusionUI>(false);
+            isFinished = true;
+#else
+            await UniTask.RunOnThreadPool(async () =>
+            {
+                cardFusionUI = await UIManager.Instance.GetUI<CardFusionUI>(false);
+                isFinished = true;
+            });
+#endif
+        });
+
+
+        while (!isFinished)
+        {
+            yield return null;
+        }
+
         cardFusionUI.uiLoad.cardGrade = grade;
         cardFusionUI.uiLoad.animationPlay = false;
         cardFusionUI.uiLoad.cardDesciption = cardDescriptionText;
@@ -439,10 +483,20 @@ public class CardSelectFusionUI : PopupUIBase
 
         CardDrawSpecialUI ui = null;
         isFinished = false;
-        _ = UniTask.RunOnThreadPool(async () =>
+
+        _ = UniTask.Create(async () =>
         {
+#if UNITY_WEBGL
             ui = await UIManager.Instance.GetUI<CardDrawSpecialUI>();
             isFinished = true;
+#else
+
+            await UniTask.RunOnThreadPool(async () =>
+            {
+                ui = await UIManager.Instance.GetUI<CardDrawSpecialUI>();
+                isFinished = true;
+            });
+#endif
         });
 
         while (!isFinished)
@@ -459,7 +513,7 @@ public class CardSelectFusionUI : PopupUIBase
         {
             yield return null;
         }
-
+*/
         isPlaying = false;
         shadowImage.enabled = false;
         //카드 원복

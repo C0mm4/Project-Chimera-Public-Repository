@@ -98,6 +98,8 @@ public class GameEndUI : PopupUIBase
 
     protected override void OnOpen()
     {
+        UIManager.Instance.CloseOtherPopupUIs(this); // 모든 팝업 UI 닫기
+
         base.OnOpen();
 
         if (resultPanelRect != null)
@@ -149,9 +151,24 @@ public class GameEndUI : PopupUIBase
         if (defeatCauseText != null) defeatCauseText.text = "";
         if (tipText != null) tipText.text = "";
 
-        if (StageManager.data.CurrentStage == 2 && lastGameResult)
+        if (StageManager.data.CurrentStage == 2 && lastGameResult && !StageManager.data.isPlayCardTutorial)
         {
-            TutorialManager.Instance.StartTutorialData(await ResourceManager.Instance.Load<SO_TutorialData>("CardTutorial"));
+            TutorialManager.Instance.StartTutorialData(
+                await ResourceManager.Instance.Load<SO_TutorialData>("CardTutorial"),
+                async () => 
+                {
+                    TutorialManager.Instance.StartTutorialData
+                    (await ResourceManager.Instance.Load<SO_TutorialData>("EnhanceTutorial")); 
+                }
+                );
+            StageManager.data.isPlayCardTutorial = true;
+        }
+
+        if(!StageManager.data.isPlayReincanationTutorial && !lastGameResult)
+        {
+            TutorialManager.Instance.StartTutorialData(
+                await ResourceManager.Instance.Load<SO_TutorialData>("Tutorial_Reincarnation"));
+            StageManager.data.isPlayReincanationTutorial = true;
         }
     }
 

@@ -6,7 +6,4 @@ using UnityEngine;
 public class BasementSO : StructureSO
 {
     public string WeaponID;
-
-    // public string[] MutatorID;
-
 }

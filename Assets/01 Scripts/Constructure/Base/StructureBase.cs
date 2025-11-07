@@ -23,16 +23,16 @@ public abstract class StructureBase : CharacterStats
     private GameObject currentModelInstance; // 현재 생성된 건물 오브젝트를 기억(레벨)
                                              //    public int CurrentLevel { get; private set; }
 
-    private ConstructureModel meshRender;
+    private ConstructureModel meshRender;   // 건축물의 모델
     public bool isAlive = true;
 
-    public StructureTableSO table;
+    public StructureTableSO table;      // 업그레이드 골드 테이블
 
-    public int IndexNumber;
+    public int IndexNumber;         // 건축물의 index 넘버
 
-    private Coroutine modelHitCoroutine;
+    private Coroutine modelHitCoroutine;    // 피격 코루틴
 
-    [SerializeField] private Transform modelTrans;
+    [SerializeField] private Transform modelTrans;  // 모델 트랜스폼
     private Animator anim;
 
     protected int lastLevel = 1;
@@ -56,6 +56,7 @@ public abstract class StructureBase : CharacterStats
         data.maxHealth = statData.maxHealth;
         data.currentHealth = data.maxHealth;
 
+        // 데이터에 건축물 레벨이 있으면 그걸 적용
         if (StageManager.data.structureLevels.ContainsKey(IndexNumber))
         {
             structureData.CurrentLevel = StageManager.data.structureLevels[IndexNumber];
@@ -65,15 +66,18 @@ public abstract class StructureBase : CharacterStats
             structureData.CurrentLevel = 1;
         }
 
+        // 데이터에 새로운 데이터 적용
         StageManager.data.structureLevels[IndexNumber] = structureData.CurrentLevel;
-
         StageManager.data.structureCards[IndexNumber] = statData.soNumber;
 
         if(interactionZone == null)
             interactionZone = GetComponentInChildren<InteractionZone>();
 
+        // 적용된 데이터를 하위 객체 메소드에 전달
         CopyStatusData(originData);
+        // 건축물의 모델을 갱신
         UpdateModel();
+        // 체력리셋
         Revive();
     }
 

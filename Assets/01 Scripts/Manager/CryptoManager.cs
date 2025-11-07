@@ -22,7 +22,7 @@ public class CryptoManager
         key = Encoding.UTF8.GetBytes("1234567890abcdef1234567890abcdef"); // 32 bytes
         iv  = Encoding.UTF8.GetBytes("abcdef1234567890");                 // 16 bytes
 #else
-        // 🔹 데스크톱/모바일 환경에서는 기존 파일 기반 키 관리
+        // 데스크톱/모바일 환경에서는 기존 파일 기반 키 관리
         if (File.Exists(keyPath) && File.Exists(ivPath))
         {
             key = File.ReadAllBytes(keyPath);
@@ -69,11 +69,11 @@ public class CryptoManager
         }
         catch (CryptographicException ex)
         {
-           // Debug.LogError($"[EncryptString] 암호화 실패: {ex.Message}");
+            Debug.LogError($"[EncryptString] 암호화 실패: {ex.Message}");
         }
         catch (Exception ex)
         {
-           // Debug.LogError($"[EncryptString] 일반 예외 발생: {ex.Message}");
+            Debug.LogError($"[EncryptString] 일반 예외 발생: {ex.Message}");
         }
 
         return null;

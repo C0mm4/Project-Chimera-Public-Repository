@@ -22,7 +22,7 @@ public class CharacterStats : MonoBehaviour
 
     [SerializeField] private float hitEffectTime = 1f;
 
-    protected virtual async void Awake()
+    protected virtual void Awake()
     {
         aiController = GetComponent<AIControllerBase>();
         
@@ -48,6 +48,8 @@ public class CharacterStats : MonoBehaviour
             gaugebarUI = obj.GetComponent<GaugeBarUI>();
         }
 
+        // 게이지 바 로딩 중 비활성화되면 끊도록
+        if (!gameObject.activeSelf) return;
         if (gaugebarUI != null)
         {
             gaugebarUI.SetFillPercent(1f);
@@ -72,6 +74,13 @@ public class CharacterStats : MonoBehaviour
 
         }
     }
+
+    private void OnDisable()
+    {
+        StageManager.Instance.OnStageFail -= Revive;
+        StageManager.Instance.OnStageClear -= Revive;
+    }
+
     protected void Heal()
     {
         data.currentHealth = data.maxHealth;
@@ -108,6 +117,13 @@ public class CharacterStats : MonoBehaviour
         OnHealthChanged?.Invoke(percent);
         //데미지를 받을때 여기밖에 안거치는거같음
         // UpdateHealthUI(percent);
+        
+        if (gameObject.CompareTag("Player") && PlayerController.Instance != null)
+        {
+            // PlayerController의 사운드 재생 함수를 호출
+            PlayerController.Instance.PlayHitSound();
+        }
+        
         if (aiController != null)
         {
             aiController.OnHit(instigator);
@@ -178,9 +194,6 @@ public class CharacterStats : MonoBehaviour
         }
 
     }
-
-
-
     private void UpdateHealthUI(float percent)
     {
         gaugebarUI.SetFillPercent(percent);

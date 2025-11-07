@@ -22,6 +22,8 @@ public class TitleUI : UIBase
 
     private Sequence breatheSequence;
 
+    [SerializeField] ButtonAnimator resetButton;
+
     protected override void OnOpen()
     {
         base.OnOpen();
@@ -32,6 +34,11 @@ public class TitleUI : UIBase
             backgroundButton.interactable = true;
             backgroundButton.onClick.RemoveAllListeners();
             backgroundButton.onClick.AddListener(StartGame);
+        }
+
+        if (resetButton != null)
+        {
+            resetButton.OnClickAnimationComplete.AddListener(OnClickResetButton);
         }
     }
 
@@ -80,5 +87,11 @@ public class TitleUI : UIBase
         }
 
         SceneLoadManager.Instance.LoadScene(SceneType.InPlay, true);
+    }
+
+    private async void OnClickResetButton()
+    {
+        var ui = await UIManager.Instance.OpenPopupUI<ConfirmCancelUI>();
+        ui.Initialize("초기화", "게임 데이터를 초기화하시겠습니까?", GameManager.Instance.RemoveSave, null, "초기화한다");
     }
 }

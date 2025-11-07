@@ -29,11 +29,9 @@ public class CardDrawUI : PopupUIBase
 
     private async void Start()
     {
-        endUI = await UIManager.Instance.GetUI<CardDrawEndUI>();
-        specialUI = await UIManager.Instance.GetUI<CardDrawSpecialUI>();
+        endUI = await UIManager.Instance.GetUI<CardDrawEndUI>(false);
+        specialUI = await UIManager.Instance.GetUI<CardDrawSpecialUI>(false);
 
-        endUI.CloseUI();
-        specialUI.CloseUI();
     }
 
     public async void CoinSetting()
@@ -123,6 +121,10 @@ public class CardDrawUI : PopupUIBase
 
             if (!StageManager.Instance.ConsumeResource(1 * set,true)) return;
 
+            if(endUI == null)
+            {
+                endUI = await UIManager.Instance.GetUI<CardDrawEndUI>();
+            }
             endUI.coinUse = resources;
             endUI.drawPoint = set;
 
@@ -138,6 +140,11 @@ public class CardDrawUI : PopupUIBase
             int consumeGold = drawPoint * 100;
 
             if (!StageManager.Instance.ConsumeResource(100 * set)) return;
+
+            if (endUI == null)
+            {
+                endUI = await UIManager.Instance.GetUI<CardDrawEndUI>();
+            }
 
             endUI.coinUse = resources;
             endUI.drawPoint = set;

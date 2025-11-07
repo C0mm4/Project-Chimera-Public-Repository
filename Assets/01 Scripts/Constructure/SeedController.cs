@@ -47,14 +47,17 @@ public class SeedController : MonoBehaviour
             }
             else if (seeds[card] != null && seeds[card].gameObject.activeSelf)
             {
-                targetStructure = await seeds[card].BuildStructure();
+                targetStructure = await seeds[card].BuildStructure(true);
             }
 
             if (targetStructure != null)
             {
-                targetStructure.SetDataSO(await DataManager.Instance.GetSOData<StructureSO>(structureCardDict[card]));
+                int id = structureCardDict[card];
+                StructureSO soData = await DataManager.Instance.GetSOData<StructureSO>(id);
+                targetStructure.SetDataSO(soData);
                 targetStructure.SetLevelStatus(structureLvDict[card]);
             }
+
         }
     }
 

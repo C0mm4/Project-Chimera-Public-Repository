@@ -127,10 +127,10 @@ public class ExplosionHitbox : MonoBehaviour
                 status.TakeDamage(instigator, damage);
                 targetsHit.Add(other);
             }
-        }
+        }/*
         else // ★ 레이어가 일치하지 않을 때 로그 추가 (디버깅용) ★
         {
             Debug.Log($"레이어 불일치. 충돌 대상: {other.name}, 대상 레이어: {LayerMask.LayerToName(other.gameObject.layer)}, 필요 레이어: {targetLayer.value}");
-        }
+        }*/
     }
 }

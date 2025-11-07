@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public event Action OnMovementStarted;
     public event Action OnMovementStopped;
     
-    private Vector2 TargetVelocity;
+    public Vector2 TargetVelocity;
     [SerializeField] private float rotationSpeed = 10f; // 회전 속도 조절
     [SerializeField] private Transform horseTrans;
     [SerializeField] private Transform modelTrans;
@@ -29,6 +29,10 @@ public class PlayerController : MonoBehaviour
     public bool isDeath { get; private set; }
     
     private bool isMoving = false;
+    
+    [Header("Audio")]
+    public AudioClip hitSound;
+    public GameObject sfxPrefab;
 
     private void Awake()
     {
@@ -63,7 +67,8 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        TargetVelocity = context.ReadValue<Vector2>();
+        if (StageManager.Instance.isPlayCanMove)
+            TargetVelocity = context.ReadValue<Vector2>();
     }
 
 
@@ -143,6 +148,30 @@ public class PlayerController : MonoBehaviour
         else
         {
             orderCollider.StartDiffuse();
+        }
+    }
+    
+    public void PlayHitSound()
+    {
+        // 죽었거나하면 재생 안함.
+        if (isDeath) return; 
+        if (sfxPrefab == null || hitSound == null)
+        {
+            Debug.LogWarning("PlayerController에 Sfx Prefab 또는 Hit Sound가 연결되지 않았습니다.");
+            return;
+        }
+        
+        GameObject sfxObject = Instantiate(sfxPrefab, transform.position, Quaternion.identity);
+        AudioSource spawnedAudioSource = sfxObject.GetComponent<AudioSource>();
+
+        if (spawnedAudioSource != null)
+        {
+            spawnedAudioSource.PlayOneShot(hitSound);
+            Destroy(sfxObject, hitSound.length);
+        }
+        else
+        {
+            Debug.LogError("SFXSource 프리팹에 AudioSource 컴포넌트가 없습니다!");
         }
     }
 }

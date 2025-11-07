@@ -25,7 +25,6 @@ public class BasementStructure : StructureBase
     {
         base.SetDataSO(statData);
         GameManager.Instance.Player.GetComponent<PlayerChangeWeapon>().ChangeWeapon((statData as BasementSO).WeaponID);
-        //GameManager.Instance.Player.GetComponent<PlayerAttack>().currentWeapon.SetWeaponLevelStatus(structureData.CurrentLevel);
     }
 
     protected override void OnEnable()

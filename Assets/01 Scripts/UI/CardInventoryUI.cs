@@ -181,8 +181,6 @@ public class CardInventoryUI : PopupUIBase
             
             RectTransform ret = transform.GetComponent<RectTransform>();
             ret.sizeDelta = new Vector2(600, 200 * ((count/4)+1));
-            Debug.Log(transform.name);
-            Debug.Log(ret.sizeDelta);
         }
     }
 }

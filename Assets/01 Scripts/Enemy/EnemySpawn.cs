@@ -156,11 +156,18 @@ public class EnemySpawn : Singleton<EnemySpawn>
             {
                 GameObject enemy = null;
                 bool isFinished = false;
-
-                _ = UniTask.RunOnThreadPool(async () =>
+                _ = UniTask.Create(async () =>
                 {
+#if UNITY_WEBGL 
                     enemy = await ObjectPoolManager.Instance.GetPool(info.keyName, enemyTransform);
                     isFinished = true;
+#else
+                    await UniTask.RunOnThreadPool(async () =>
+                    {
+                        enemy = await ObjectPoolManager.Instance.GetPool(info.keyName, enemyTransform);
+                        isFinished = true;
+                    });
+#endif
                 });
 
                 while (!isFinished)
